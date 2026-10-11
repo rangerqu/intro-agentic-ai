@@ -938,28 +938,30 @@ AI 的办法正好反过来：**不告诉它怎么判断，只给它看例子**�
 
 # 为什么它会一本正经地胡说？
 
-<div class="pt-2 text-sm opacity-70">有人问 AI：</div>
+<div class="pt-2 text-sm opacity-70">2023 年初，微软刚在 Bing 里加上 AI 回答，我问它：</div>
 <div class="mt-1 p-3 rounded bg-gray-500 bg-opacity-10 text-sm">💬 "北京西城有哪些好的小学？"</div>
 
 <div class="mt-3 p-4 rounded border-l-4 border-orange-500 bg-orange-500 bg-opacity-5 text-sm leading-7">
 🤖 北京第二实验小学，位于北京西城区西单地区新文化街…… <span class="text-green-600 font-bold">✓ 真的</span><br/>
-北京市第三实验小学，位于北京西城区××街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
-北京市第四实验小学，位于北京西城区××路…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
-……<br/>
-北京市第七实验小学，位于北京西城区××胡同…… <span class="text-red-500 font-bold">✗ 编的</span>
+北京市第三实验小学，位于北京西城区德胜门外大街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+北京市第四实验小学，位于北京西城区阜成门内大街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+北京市第五实验小学，位于北京西城区广安门内大街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+北京市第六实验小学，位于北京西城区西直门南小街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+北京市第七实验小学，位于北京西城区宣武门东大街…… <span class="text-red-500 font-bold">✗ 编的</span>
+<div class="text-xs opacity-60 pt-1">按记忆重现。街道都是真的，学校是编的。</div>
 </div>
 
-<div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+<div class="mt-3 grid grid-cols-2 gap-4 text-sm">
 <div class="p-3 rounded border border-purple-500 border-opacity-40">前面是"第二实验小学"，下一个最像的字是什么？它不是在查资料，是在<b>顺着往下接</b>。这叫"幻觉"。</div>
 <div class="p-3 rounded border border-purple-500 border-opacity-40">它也不知道你的事：没看过公司制度、你的合同。用好 AI 两个关键：<b>把话说清楚</b>，<b>把材料给它</b>。</div>
 </div>
 
-<div class="pt-4 text-center text-base"><b>写得流畅，不等于说得对。</b></div>
+<div class="pt-2 text-center text-base"><b>写得流畅，不等于说得对。</b></div>
 
 <!--
-但正因为它是在"猜最像的下一个字"，就带来一个重要的后果。我给大家看一个真实的回答。
+但正因为它是在"猜最像的下一个字"，就带来一个重要的后果。我讲一个我自己遇到的事。
 
-有人问 AI："北京西城有哪些好的小学？"
+2023 年初，微软刚在 Bing 搜索里加上 AI 回答，我好奇试了一下，问它："北京西城有哪些好的小学？"
 
 它是这么答的：
 
@@ -967,11 +969,11 @@ AI 的办法正好反过来：**不告诉它怎么判断，只给它看例子**�
 
 到这里都是对的，实验二小确实是西城的名校。
 
-接着它说："北京市第三实验小学，位于北京西城区某某街……"
+接着它说："北京市第三实验小学，位于北京西城区德胜门外大街……"
 
-"北京市第四实验小学……第五……第六……"
+"北京市第四实验小学，位于阜成门内大街……第五，广安门内大街……第六，西直门南小街……"
 
-一直编到了"第七实验小学"，每一所都有名字、有地址，格式整整齐齐。（停顿）
+一直编到了"第七实验小学"，宣武门东大街。每一所都有名字、有地址，街道还都是西城真实存在的街道，格式整整齐齐。但这些学校，都是它编出来的。（停顿）
 
 为什么会这样？大家回想一下刚才讲的：它在猜"下一个最像的字"。前面出现了"第二实验小学"，那接下来最像的是什么？当然是"第三实验小学"。它不是在查资料，它是在**顺着往下接**。
 
