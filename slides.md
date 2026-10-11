@@ -4,7 +4,7 @@ background: https://cover.sli.dev
 title: 认识 Agentic AI · 2026 内部分享
 info: |
   ## 认识 Agentic AI
-  从神经网络到智能体，以及它与日常工作的关系。2026-10 修订第三稿。
+  从神经网络到智能体，以及它与日常工作的关系。2026-10 修订第四稿。
 class: text-center
 drawings:
   persist: false
@@ -17,7 +17,7 @@ mdc: true
 从神经网络 → 生成式 AI → 智能体
 
 <div class="pt-4 text-sm opacity-75">
-  2026 年内部分享 · 修订第三稿<br/>
+  2026 年内部分享 · 修订第四稿<br/>
   <span class="text-xs">原作：川叶 · 基于 <a href="https://github.com/riverscn/intro-agentic-ai">intro-agentic-ai</a> 改编</span>
   <div class="pt-2">
     <a
@@ -45,44 +45,8 @@ mdc: true
 大家好。今天这一场跟前面两位不太一样。投资部和 IT 的同事讲的是"怎么在业务和系统里用 AI"，我想往回退一步，讲得更基础一点：这些天天听到的词，到底是什么意思。
 
 我自己在风险部和清算部，不是技术出身。所以今天不讲代码，也不讲公式。如果哪里没听懂，那是我没讲清楚，随时打断我。
--->
 
----
-layout: center
-class: text-center
----
-
-# 先做个小调查
-
-<div class="grid grid-cols-2 gap-8 pt-8 text-left">
-
-<div class="p-5 rounded border border-blue-500 border-opacity-40">
-<div class="text-3xl">🙋</div>
-<div class="font-bold pt-2">上个月用过 AI 的？</div>
-</div>
-
-<div class="p-5 rounded border border-purple-500 border-opacity-40">
-<div class="text-3xl">✅</div>
-<div class="font-bold pt-2">用 AI <b>完成过一件完整的事</b>的？</div>
-<div class="text-sm opacity-70 pt-1">比如写好一封邮件直接发出、整理完一份材料直接交了</div>
-</div>
-
-</div>
-
-<div class="grid grid-cols-3 gap-4 pt-10 text-left text-sm">
-<div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>🧭 搞懂几个词</b><br/><span class="opacity-75">大模型、RAG、Agent、Context、Skill、MCP、Harness</span></div>
-<div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>🔍 看几个真实例子</b><br/><span class="opacity-75">都是我自己在用的</span></div>
-<div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>🧩 回去试一件小事</b><br/><span class="opacity-75">下周就能开始</span></div>
-</div>
-
-<!--
-先做个小调查。上个月用过 AI 的，请举一下手。（举手）
-
-好，挺多。那再问一个：用 AI 帮你**完成过一件完整的事**的，比如写好一封邮件直接发出去，或者整理完一份材料直接交了，请举手。（举手）
-
-少了很多，对吧。这就是今天想聊的东西。很多人用过 AI，但大多停在"问个问题、看看答案"。中间差的不是聪明，而是几个概念、几个习惯。
-
-所以今天我想做三件事：
+今天我想做三件事：
 
 第一，**搞懂几个词**：大模型、RAG、Agent、Context、Skill、MCP、Harness。听完以后，别人再说这些词，你脑子里有个画面。
 
@@ -974,47 +938,46 @@ AI 的办法正好反过来：**不告诉它怎么判断，只给它看例子**�
 
 # 为什么它会一本正经地胡说？
 
-<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="pt-2 text-sm opacity-70">有人问 AI：</div>
+<div class="mt-1 p-3 rounded bg-gray-500 bg-opacity-10 text-sm">💬 "北京西城有哪些好的小学？"</div>
 
-<div>
-
-<div class="text-sm opacity-70 pb-2">问它一件它不知道的事：</div>
-
-<div class="p-3 rounded bg-gray-500 bg-opacity-10 text-sm">💬 "我们公司的年假怎么算？"</div>
-
-<div class="mt-3 p-3 rounded border-l-4 border-orange-500 bg-orange-500 bg-opacity-10 text-sm leading-relaxed">
-🤖 "根据公司规定，员工入职满一年可享受 10 天带薪年假，此后每满一年增加 1 天，最多 15 天……"
-<div class="text-xs opacity-70 pt-2">格式整齐、语气笃定，但它<b>根本没看过</b>我们的制度。</div>
+<div class="mt-3 p-4 rounded border-l-4 border-orange-500 bg-orange-500 bg-opacity-5 text-sm leading-7">
+🤖 北京第二实验小学，位于北京西城区西单地区新文化街…… <span class="text-green-600 font-bold">✓ 真的</span><br/>
+北京市第三实验小学，位于北京西城区××街…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+北京市第四实验小学，位于北京西城区××路…… <span class="text-red-500 font-bold">✗ 编的</span><br/>
+……<br/>
+北京市第七实验小学，位于北京西城区××胡同…… <span class="text-red-500 font-bold">✗ 编的</span>
 </div>
 
-</div>
-
-<div>
-
-<div class="p-4 rounded border border-purple-500 border-opacity-40 text-sm">
-<b>它在做的是</b>：写出<b>最像答案</b>的下一个字，<br/>而不是去查事实。
-<div class="pt-3 opacity-75">这叫"幻觉"。训练让它很能干，但它不知道你的事：没看过公司制度、你的合同，也不知道今天发生了什么。</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="mt-6 grid grid-cols-2 gap-4 text-center">
-<div class="p-3 rounded bg-blue-500 bg-opacity-10"><b>关键一：把话说清楚</b><br/><span class="text-sm opacity-70">→ 第二部分</span></div>
-<div class="p-3 rounded bg-green-500 bg-opacity-10"><b>关键二：把材料给它</b><br/><span class="text-sm opacity-70">→ 第三部分</span></div>
+<div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+<div class="p-3 rounded border border-purple-500 border-opacity-40">前面是"第二实验小学"，下一个最像的字是什么？它不是在查资料，是在<b>顺着往下接</b>。这叫"幻觉"。</div>
+<div class="p-3 rounded border border-purple-500 border-opacity-40">它也不知道你的事：没看过公司制度、你的合同。用好 AI 两个关键：<b>把话说清楚</b>，<b>把材料给它</b>。</div>
 </div>
 
 <div class="pt-4 text-center text-base"><b>写得流畅，不等于说得对。</b></div>
 
 <!--
-但正因为它是在"猜最像的下一个字"，就带来一个重要的后果：
+但正因为它是在"猜最像的下一个字"，就带来一个重要的后果。我给大家看一个真实的回答。
 
-**它写得流畅，不代表它说得对。**
+有人问 AI："北京西城有哪些好的小学？"
 
-如果你问它一件它不知道的事，比如我们公司的年假怎么算，它不一定会说"我不知道"，它可能写出一段**最像答案的文字**。格式整齐、语气笃定，但可能是编的。这个现象叫"幻觉"。
+它是这么答的：
 
-为什么会这样？因为它不知道你的事。它没看过我们公司的制度，没看过你的合同，也不知道今天发生了什么。
+"北京第二实验小学，位于北京西城区西单地区新文化街……"
+
+到这里都是对的，实验二小确实是西城的名校。
+
+接着它说："北京市第三实验小学，位于北京西城区某某街……"
+
+"北京市第四实验小学……第五……第六……"
+
+一直编到了"第七实验小学"，每一所都有名字、有地址，格式整整齐齐。（停顿）
+
+为什么会这样？大家回想一下刚才讲的：它在猜"下一个最像的字"。前面出现了"第二实验小学"，那接下来最像的是什么？当然是"第三实验小学"。它不是在查资料，它是在**顺着往下接**。
+
+这个现象叫"**幻觉**"：**它写得流畅，不代表它说得对。** 而且它不会告诉你哪一句是真的、哪一句是编的，语气都一样笃定。
+
+更麻烦的是，它不知道你的事。它没看过我们公司的制度，没看过你的合同，也不知道今天发生了什么。你问这些，它也可能这样"顺着往下接"。
 
 所以用好 AI 有两个关键：一是**把话说清楚**，二是**把材料给它**。接下来两部分，就分别讲这两件事。
 -->
@@ -1211,120 +1174,99 @@ layout: section
 
 # <span class="term" data-zh="检索增强生成">RAG</span>：先查再答
 
-<div class="pt-2">
-
-**问题**：模型不知道<b>我们公司自己的事</b>（<span class="term" data-zh="标准操作流程">SOP</span>、内部制度、工作记录）。
-
-**解法**：问问题之前，先从公司资料里<b>查一下相关段落</b>，连同问题一起给模型。
-
+<div class="text-sm">
+<b>问题</b>：模型不知道公司自己的事（规章制度、操作规程、会议纪要）。<b>解法</b>：先从资料里查出相关段落，连同问题一起交给模型。
 </div>
 
-<div class="pt-4">
+<div class="pt-2">
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.62}
 flowchart LR
-  U[用户提问] --> R[检索<br/>从知识库找相关片段]
-  R --> C[拼接<br/>问题 + 相关片段]
+  D[(资料库<br/>切成小段)] --> V1[向量化<br/>每段变成一串数字]
+  V1 --> K[(向量库)]
+  U[提问] --> V2[向量化<br/>问题也变成数字]
+  V2 --> S[找最接近的几段]
+  K -.-> S
+  S --> C[问题 + 相关段落]
   C --> M[大模型]
   M --> A[回答]
-
-  K[(公司知识库<br/>制度 / 流程 / 案例)] -.-> R
 ```
 
 </div>
 
-<div class="pt-4 grid grid-cols-2 gap-6 text-sm">
-
+<div class="pt-2 grid grid-cols-2 gap-4 text-sm">
 <div class="p-3 rounded bg-gray-500 bg-opacity-10">
-<b><span class="term" data-zh="检索增强生成">RAG</span> = <span class="term" data-zh="检索增强生成">Retrieval-Augmented Generation</span></b><br/>
-"检索增强生成"——先查再答。
+<b>向量化</b>：意思相近的文字，变成的数字也相近。<br/>
+<span class="opacity-75">像一座<b>按意思摆书</b>的图书馆，不按书名。</span>
 </div>
-
 <div class="p-3 rounded bg-blue-500 bg-opacity-10">
 <b>像开卷考试</b>：每道题先去翻书。<br/>
-问法和原文措辞对不上，也能找到相关段落。
+<span class="opacity-75">问"提前终止要提前多久通知"，能找到"解除协议须提前三十日书面告知"。</span>
 </div>
-
 </div>
 
 <!--
 先讲最常听到的一种，叫 **RAG**，中文是"检索增强生成"。名字很长，意思就四个字：**先查再答**。
 
-大家看这张图：你提一个问题，系统先去资料库里找出最相关的几段，把问题和这几段拼在一起交给模型，模型再根据这几段来回答。就像考开卷考试，**每道题都先去翻书**。
+它要解决的问题是：模型不知道我们公司自己的事，比如规章制度、操作规程、会议纪要。
 
-它的好处是，不用你知道答案在哪份文件里。你问"提前终止要提前多久通知"，它能找到写着"解除协议须提前三十日书面告知"的那一段，哪怕两句话里一个字都对不上。
+大家看这张图：你提一个问题，系统先去资料库里找出最相关的几段，把问题和这几段拼在一起交给模型，模型再根据这几段来回答。就像考开卷考试，**每道题先去翻书**。
+
+那它是怎么"找到最相关的几段"的？原理可以简单说一下。
+
+系统事先把所有文档切成一小段一小段，再把每一段变成一串数字，这一步叫"**向量化**"。神奇的地方在于：**意思相近的文字，变出来的数字也相近。** 你提问的时候，问题也被变成一串数字，系统去找和它最接近的那几段。
+
+打个比方，普通的图书馆按书名摆书，这种图书馆是**按意思摆书**的。所以你问"提前终止要提前多久通知"，它能找到写着"解除协议须提前三十日书面告知"的那一段，哪怕两句话里一个字都对不上。
+
+说一个我自己真的在用的例子。
+
+（以下口头讲，不放在页面上）
+
+我把家里的文件，账单、合同、保单、体检报告这些，都放进了一个文档管理系统，在上面加了这样一个检索库，再接了一个接口，让我的 AI 助手可以直接去查、去读。现在我想找东西，不用记它放在哪个文件夹，直接问就行。【按实际调整：举一个你常问的问题】
+
+这个文档库后来还帮我办成了一件事，我放到下一部分讲，因为那件事已经不只是"查资料"了，而是"动手办事"。
 -->
 
 ---
 
 # 不止 RAG：按资料的特点选方法
 
-<div class="grid grid-cols-2 gap-6 pt-4 text-sm">
+<div class="pt-2 text-sm">
 
-<div class="p-4 rounded border border-blue-500 border-opacity-40">
-<div class="font-bold text-lg">📚 <span class="term" data-zh="检索增强生成">RAG</span>：先查再答</div>
-<div class="opacity-70 pt-1">像开卷考试，每道题先去翻书</div>
-<div class="pt-3"><b>适合</b>：资料多、格式杂、问法和原文措辞对不上</div>
-<div class="pt-2"><b>例如</b>：法律协议文档库；采购技术标准和历次投标资料</div>
-</div>
-
-<div class="p-4 rounded border border-purple-500 border-opacity-40">
-<div class="font-bold text-lg">🗺️ LLM Wiki：先整理出一张地图</div>
-<div class="opacity-70 pt-1">AI 先把资料读一遍，整理成互相链接的页面，并持续更新</div>
-<div class="pt-3"><b>适合</b>：量不大、以文字为主、彼此关联</div>
-<div class="pt-2"><b>例如</b>：公司规章制度。整理出"出差全流程""审批权限总览""术语表"，每句都链接回原条文 <span class="text-xs opacity-60">（设想）</span></div>
-</div>
+| 方法 | 怎么做 | 适合 |
+|---|---|---|
+| 📄 **直接给全文** | 整份放进对话 | 资料不多：一两份合同、一份制度 |
+| 🔎 **关键词搜索** | 像 Ctrl+F，AI 可以自己反复搜、反复读 | 找条款号、专有名词，要准 |
+| 📚 **<span class="term" data-zh="检索增强生成">RAG</span>** | 按意思找最相近的段落 | 资料多、格式杂：法律协议库、采购技术标准和投标资料 |
+| 🗺️ **LLM Wiki** | AI 先整理成互相链接的页面，并持续更新 | 量不大、彼此关联：规章制度 <span class="text-xs opacity-60">（设想）</span><br/><span class="text-xs opacity-75">原文一字不改 · Wiki 只做导航 · 回答必须引原文</span> |
+| 🛠 **通过工具查数据** | 调用工具取数，而不是读文档 | 指标、台账、表格（见 MCP） |
 
 </div>
 
-<div class="mt-4 grid grid-cols-3 gap-3 text-xs text-center">
-<div class="p-2 rounded bg-gray-500 bg-opacity-10">① <b>原文一字不改</b>，它才是权威来源</div>
-<div class="p-2 rounded bg-gray-500 bg-opacity-10">② <b>Wiki 只做导航</b>，每句链接回原条文</div>
-<div class="p-2 rounded bg-gray-500 bg-opacity-10">③ <b>回答必须引用原文</b>、注明出处</div>
-</div>
-
-<div class="pt-4 text-center text-base">
-要忠实原文的地方，让它<b>引原文</b>；要串起来理解的地方，让它<b>整理</b>。
+<div class="pt-3 text-center text-base">
+几种经常混着用。要忠实原文的，让它<b>引原文</b>；要串起来理解的，让它<b>整理</b>。
 </div>
 
 <!--
-但 RAG 不是唯一的办法。选哪种，要看资料是什么样的。
+但 RAG 不是唯一的办法。让 AI 读资料，常见的还有这么几种，选哪种要看资料是什么样的：
 
-RAG 适合**资料多、格式杂、问法和原文措辞对不上**的情况。比如**法律协议的文档库**，要查某类条款在各份协议里怎么约定；或者**采购的技术标准和历次投标资料**，要比对、要引用。
+**第一，直接给全文。** 资料不多，一两份合同、一份制度，就整份放进对话里。最简单，往往也最可靠。
 
-还有一种今年开始流行的做法，叫 **LLM Wiki**。思路是：与其每次去翻书，不如**让 AI 先把书读一遍，整理出一张地图**：一套互相链接的页面，有新资料进来，它负责更新。
+**第二，关键词搜索。** 就像我们在文件里按 Ctrl+F，只不过让 AI 来按，而且它可以自己反复搜、反复读。找某个条款号、某个专有名词，这个办法最准。
 
-它适合什么？我第一个想到的是**公司的规章制度**。
+**第三，就是刚才讲的 RAG。** 资料多、格式杂、问法和原文措辞对不上的时候更有用。比如法律协议的文档库，或者采购的技术标准和历次投标资料。
 
-大家想一想，查制度的时候，最难的是什么？往往不是"找到某一条"，而是：
+**第四，LLM Wiki。** 这是今年开始流行的做法：与其每次去翻书，不如**让 AI 先把书读一遍，整理出一张地图**，一套互相链接的页面，有新资料进来它负责更新。它适合量不大、以文字为主、彼此关联的资料。
 
-- **一件事牵涉好几项制度**。比如出差，要看差旅标准、报销、审批权限，可能还有请假，分散在好几份文件里；
-- **制度之间互相引用**，"按《某某办法》第几条执行"，要跳来跳去地看；
-- **同一个词在不同制度里，定义不完全一样。**
+我第一个想到的是公司的规章制度。查制度最难的往往不是"找到某一条"，而是一件事牵涉好几项制度、制度之间互相引用、同一个词在不同制度里定义不一样。五六十项制度做成 Wiki，就能整理出"出差全流程""审批权限总览"这样的页面。
 
-公司大概五六十项制度，量不大、都是文字、不常变、彼此关联，正好是 LLM Wiki 最擅长的情况。AI 把它们读一遍，就可以整理出"出差全流程""审批权限总览""术语表"这样的主题页。你问"我下个月去出差，要走哪些流程、能报多少"，它沿着这张地图，把相关的几条都找出来。它还能顺手发现两项制度之间说法不一致、引用了已经废止的条款，这对管制度的同事也有用。
+但查制度最要紧的是忠实原文，所以要守住三条：**原文一字不改；Wiki 只做导航，每句链接回原条文；回答必须引用原文、注明出处。** 一句话：Wiki 负责"该看哪几条"，原文负责"条文怎么说"。这个我还没做，是一个设想。
 
-但查制度，最要紧的是**忠实原文**，不能是"大概意思"。所以这样的 Wiki 要守住三条：
+**第五，通过工具查数据。** 如果资料本来就在表格或者数据库里，比如各种指标、台账，那就不是让它"读文档"，而是让它调用工具去取数。这个后面讲 MCP 的时候再说。
 
-第一，**原文一字不改**，它才是权威来源；
+这几种经常混着用。大家记住一个原则就好：**要忠实原文的地方，让它引原文；要串起来理解的地方，让它整理。**
 
-第二，**Wiki 只做导航**，每一句都链接回原条文；
-
-第三，**回答时必须引用原文、注明出处**。
-
-一句话：**Wiki 负责"该看哪几条"，原文负责"条文怎么说"。**
-
-这个我还没做，是一个设想，但从技术上看并不难。当然，真要做，用什么工具、放在哪里，要按公司的规定来。
-
-所以大家记住一个原则就好：**要忠实原文的地方，让它引原文；要串起来理解的地方，让它整理。** 这几种方法也经常混着用。
-
-再说一个我自己真的在用的。
-
-（以下口头讲，不放在页面上）
-
-我把家里的文件，账单、合同、保单、体检报告这些，都放进了一个文档管理系统，在上面加了一个检索库，再接了一个接口，让我的 AI 助手可以直接去查、去读。现在我想找东西，不用记它放在哪个文件夹，直接问就行。【按实际调整：举一个你常问的问题】
-
-这个文档库后来还帮我办成了一件事，我放到下一部分讲，因为那件事已经不只是"查资料"了，而是"动手办事"。
+当然，真要做，用什么工具、放在哪里，要按公司的规定来。
 -->
 
 ---
@@ -1714,7 +1656,7 @@ flowchart TD
 <div class="font-bold">📝 写入 <span class="term" data-zh="写入">Write</span></div>
 <div class="opacity-80 pt-1">
 把进度和结论<b>写到外部</b>（文件、记忆），下次重新读取。<br/>
-<span class="text-xs opacity-70">→ 例："已比对至第 12 条；第 7 条生效日期待核实；依据 9 月版。"</span>
+<span class="text-xs opacity-70">→ 像同事交接：写清做到哪、还剩什么，才接得上。</span>
 </div>
 </div>
 
@@ -1852,16 +1794,20 @@ flowchart TB
 
 </div>
 
-<div class="pt-4 grid grid-cols-2 gap-4 text-sm">
+<div class="pt-2 grid grid-cols-2 gap-4 text-sm">
 
 <div class="p-3 rounded bg-blue-500 bg-opacity-10">
 <b>类比</b>：<span class="term" data-zh="模型上下文协议">MCP</span> 对 AI，就像 <span class="term" data-zh="C 型接口">USB-C</span> 对手机——统一接口，连接兼容设备。
 </div>
 
 <div class="p-3 rounded bg-green-500 bg-opacity-10">
-<b>对我们的意义</b>：按需要连接合适的系统。接口支持什么，和谁获准使用什么，要分别确定。
+<b>接得上，不等于应该接</b>：能接哪些系统、能读还是能写，要另外决定。
 </div>
 
+</div>
+
+<div class="mt-3 p-3 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5 text-sm">
+<b>能看到什么，由接口的设计决定，不由协议决定。</b> 设想：AI 辅助合规检查，不直接连数据库，而是通过一个 MCP 接口，只开放「查某指标某天的数值」「查对应限额」，<b>只读、每次调用有记录</b>。
 </div>
 
 <!--
@@ -1871,17 +1817,19 @@ flowchart TB
 
 我刚才说的家庭文档库，就是通过这样一个接口接到 AI 助手上的。很多常用软件，比如笔记、日历、表格，也都提供了现成的接口。
 
-当然，**接得上，不等于应该接**。能接哪些系统、能读还是能写，是另外一个问题。
--->
+但是，**接得上，不等于应该接**。这里有一个很重要、也常被误解的地方：
 
----
-layout: center
-class: text-center
----
+MCP 只是一个"插口的标准"，它本身不决定 AI 能看到什么。**能看到什么、能做什么，是做这个接口的人设计出来的。**
 
-# 现场演示
+举个设想的例子。假如将来要让 AI 辅助做合规检查，我们不会让它直接连上数据库、想查什么查什么。而是做一个 MCP 接口，只开放几样规定好的东西：
 
-<!--
+- 查某个指标在某一天的数值；
+- 查这个指标对应的限额；
+- 只能读，不能改；
+- 每一次调用都有记录。
+
+这样，AI 能做的事，就被限定在我们允许的范围里。它能帮忙比对、提示，但碰不到它不该碰的东西。
+
 讲到这里，我给大家看一个我自己做的小工具，它正好把 Skill 和 MCP 都用上了。
 
 【现场演示，口头介绍，不写在页面上】
@@ -2439,7 +2387,7 @@ layout: end
 
 欢迎讨论：你最想先试哪一件事？
 
-2026 年内部分享 · 修订第三稿
+2026 年内部分享 · 修订第四稿
 
 <!--
 开场我问过大家，有谁用 AI 完成过一件完整的事。希望下次再问的时候，举手的人能多一些。
