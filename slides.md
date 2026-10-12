@@ -4,7 +4,7 @@ background: https://cover.sli.dev
 title: 认识 Agentic AI · 2026 内部分享
 info: |
   ## 认识 Agentic AI
-  从神经网络到智能体，以及它与日常工作的关系。2026-10 修订第四稿。
+  从神经网络到智能体，以及中后台如何应用 AI。
 class: text-center
 drawings:
   persist: false
@@ -14,30 +14,15 @@ mdc: true
 
 # 认识 <span class="term" data-zh="自主式 AI">Agentic AI</span>
 
-从神经网络 → 生成式 AI → 智能体
+从神经网络到智能体，以及中后台如何应用 AI
 
 <div class="pt-4 text-sm opacity-75">
-  2026 年内部分享 · 修订第四稿<br/>
-  <span class="text-xs">原作：川叶 · 基于 <a href="https://github.com/riverscn/intro-agentic-ai">intro-agentic-ai</a> 改编</span>
-  <div class="pt-2">
-    <a
-      href="https://github.com/rangerqu/intro-agentic-ai"
-      target="_blank"
-      rel="noopener noreferrer"
-      title="GitHub 源代码"
-      aria-label="GitHub 源代码"
-      class="inline-flex items-center gap-2 opacity-80 hover:opacity-100"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true">
-        <path d="M12 .5C5.649.5.5 5.649.5 12a11.5 11.5 0 0 0 7.863 10.923c.575.106.787-.25.787-.556 0-.274-.01-1-.016-1.962-3.2.696-3.875-1.542-3.875-1.542-.523-1.33-1.277-1.684-1.277-1.684-1.044-.714.08-.7.08-.7 1.154.081 1.761 1.185 1.761 1.185 1.026 1.758 2.692 1.25 3.349.956.104-.743.402-1.25.731-1.538-2.554-.291-5.24-1.277-5.24-5.685 0-1.256.448-2.284 1.183-3.09-.119-.291-.513-1.463.113-3.049 0 0 .965-.309 3.162 1.18A10.99 10.99 0 0 1 12 6.067c.977.005 1.961.132 2.88.387 2.195-1.489 3.158-1.18 3.158-1.18.628 1.586.234 2.758.115 3.049.737.806 1.181 1.834 1.181 3.09 0 4.419-2.691 5.39-5.253 5.676.413.355.781 1.057.781 2.131 0 1.538-.014 2.779-.014 3.158 0 .309.208.668.793.555A11.503 11.503 0 0 0 23.5 12C23.5 5.649 18.351.5 12 .5Z"/>
-      </svg>
-    </a>
-  </div>
+  2026 年内部分享
 </div>
 
 <div class="pt-12">
   <span class="px-2 py-1 rounded cursor-pointer opacity-70 hover:opacity-100" hover:bg="white op-10">
-    面向全公司 · 不假设任何 AI 背景
+    面向全公司 · 不假设任何技术背景
   </span>
 </div>
 
@@ -938,7 +923,7 @@ AI 的办法正好反过来：**不告诉它怎么判断，只给它看例子**�
 
 # 为什么它会一本正经地胡说？
 
-<div class="pt-2 text-sm opacity-70">2023 年初，微软刚在 Bing 里加上 AI 回答，我问它：</div>
+<div class="pt-2 text-sm opacity-70">2023 年初，我问 AI：</div>
 <div class="mt-1 p-3 rounded bg-gray-500 bg-opacity-10 text-sm">💬 "北京西城有哪些好的小学？"</div>
 
 <div class="mt-3 p-4 rounded border-l-4 border-orange-500 bg-orange-500 bg-opacity-5 text-sm leading-7">
@@ -960,7 +945,7 @@ AI 的办法正好反过来：**不告诉它怎么判断，只给它看例子**�
 <!--
 但正因为它是在"猜最像的下一个字"，就带来一个重要的后果。我讲一个我自己遇到的事。
 
-2023 年初，微软刚在 Bing 搜索里加上 AI 回答，我好奇试了一下，问它："北京西城有哪些好的小学？"
+2023 年初，我问 AI："北京西城有哪些好的小学？"
 
 它是这么答的：
 
@@ -1244,8 +1229,14 @@ flowchart LR
 
 </div>
 
-<div class="pt-3 text-center text-base">
+<div class="pt-2 text-center text-base">
 几种经常混着用。要忠实原文的，让它<b>引原文</b>；要串起来理解的，让它<b>整理</b>。
+</div>
+
+<div class="pt-2 text-xs opacity-60 leading-5">
+出处：Anthropic《<a href="https://www.anthropic.com/news/contextual-retrieval">Introducing Contextual Retrieval</a>》（2024-09）：资料少于约 20 万 token（约 500 页）可整份放入；关键词（BM25）与语义向量混合检索。
+Anthropic《<a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a>》（2025-09）：Agent 用 grep 等工具"即时检索"，与预先检索混合使用。
+Karpathy，LLM Wiki（2026-04）。表格为据此归纳。
 </div>
 
 <!--
@@ -1264,6 +1255,8 @@ flowchart LR
 但查制度最要紧的是忠实原文，所以要守住三条：**原文一字不改；Wiki 只做导航，每句链接回原条文；回答必须引用原文、注明出处。** 一句话：Wiki 负责"该看哪几条"，原文负责"条文怎么说"。这个我还没做，是一个设想。
 
 **第五，通过工具查数据。** 如果资料本来就在表格或者数据库里，比如各种指标、台账，那就不是让它"读文档"，而是让它调用工具去取数。这个后面讲 MCP 的时候再说。
+
+这几种方法不是我自己分的。比如 Anthropic 在介绍检索技术的文章里就说，资料不到大约五百页，可以直接整份放进去，不必做检索；资料多了，用关键词和语义检索结合。在讲上下文工程的文章里也说，Agent 可以像编程助手那样用搜索工具"现查现读"，和预先检索混着用。LLM Wiki 是 Karpathy 今年提出的做法。页面下方列了出处。
 
 这几种经常混着用。大家记住一个原则就好：**要忠实原文的地方，让它引原文；要串起来理解的地方，让它整理。**
 
@@ -1404,17 +1397,18 @@ flowchart LR
 <div class="min-w-0">
 
 ```mermaid {scale: 0.6}
+%%{init: {"sequence": {"mirrorActors": false}}}%%
 sequenceDiagram
   participant M as 模型
-  participant T as 外面的程序
-  M->>T: 搜索文档("延误险 保险合同")
-  T->>M: 找到编号 1234
-  M->>T: 读取文档(1234)
-  T->>M: 理赔条款、所需材料
-  M->>T: 搜索并读取"行程单""延误证明"
-  T->>M: 航班号、日期、延误时长
-  M->>T: 起草邮件(收件人, 正文, 附件 3 份)
-  T->>M: 草稿已生成，等我确认
+  participant R as 检索库<br/>(RAG 向量库)
+  participant D as 文档管理系统
+  participant E as 邮箱
+  M->>R: 搜索("延误险 保险合同""行程单""延误证明")
+  R->>M: 编号 1234、1301、1302
+  M->>D: 取出这 3 份 PDF，转成文字
+  D->>M: 理赔条款、航班号、日期、延误时长
+  M->>E: 起草邮件(附件 3 份)
+  E->>M: 草稿已存，等我确认
 ```
 
 </div>
@@ -1422,7 +1416,7 @@ sequenceDiagram
 </div>
 
 <div class="pt-2 text-center text-sm">
-<b>每一步真正动手的，都是外面的程序。</b>模型只决定"调哪个工具、填什么参数"，并读懂返回的结果。
+<b>每一步真正动手的，都是外面的工具：检索库、文档管理系统、邮箱。</b>模型只决定"调哪个工具、填什么参数"，并读懂返回的结果。
 <span class="text-xs opacity-60">（编号为示意）</span>
 </div>
 
@@ -1437,13 +1431,13 @@ sequenceDiagram
 
 然后理赔这件事，在后台大概是这样走的：
 
-第一步，它输出："调用搜索文档，关键词：延误险、保险合同。"外面的程序去检索库里查，返回："找到 1 份，编号 1234，某某旅行保险合同。"
+第一步，它输出："调用搜索文档，关键词：延误险、保险合同。"这一步真正干活的是**检索库**，也就是前面讲的 RAG 向量库，返回："找到 1 份，编号 1234，某某旅行保险合同。"
 
-第二步，它输出："调用读取文档，编号 1234。"程序把 PDF 取出来转成文字交给它。它读到理赔条款：延误几个小时以上可以赔、需要哪些材料。
+第二步，它输出："调用读取文档，编号 1234。"这一步是**文档管理系统**把 PDF 原件取出来，转成文字交给它。它读到理赔条款：延误几个小时以上可以赔、需要哪些材料。
 
 第三步，它照同样的办法，再去搜"行程单"、搜"延误证明"，分别取出来读，核对航班号和日期。
 
-第四步，它输出："调用起草邮件，收件人是保险公司理赔邮箱，附件是这三份文件。"程序生成一封草稿，等我确认。
+第四步，它输出："调用起草邮件，收件人是保险公司理赔邮箱，附件是这三份文件。"这一步是**邮箱**生成一封草稿，等我确认。
 
 【按实际调整：按你的工具和实际步骤改；编号等细节是示意】
 
@@ -1648,7 +1642,7 @@ flowchart TD
 <div class="p-4 rounded bg-green-500 bg-opacity-10">
 <div class="font-bold">🗂 隔离 <span class="term" data-zh="隔离">Isolation</span> · <span class="term" data-zh="子智能体">Subagent</span></div>
 <div class="opacity-80 pt-1">
-子任务交给子 <span class="term" data-zh="智能体">Agent</span>，像主管把活分给专员：各自只看自己那部分材料，带回<b>结论、依据和未解决的问题</b>。<br/>
+子任务交给子 <span class="term" data-zh="智能体">Agent</span>，像主管把活分给组员：各自只看自己那部分材料，带回<b>结论、依据和未解决的问题</b>。<br/>
 <span class="text-xs opacity-70">→ 主 Agent 更清爽；但分开做不保证更准，也可能更贵。</span>
 </div>
 </div>
@@ -1718,40 +1712,46 @@ layout: section
 
 <div>
 
-### 例子：风险部周报 Skill
+### 例子：风险部地缘周报 Skill 的结构
 
-<div class="p-3 rounded bg-blue-500 bg-opacity-10 text-sm space-y-1">
-<div>🌍 关注哪些国家、哪些主题（主权财政、地缘政治）</div>
-<div>📰 优先用哪些来源；官方公告和媒体报道怎么区分</div>
-<div>📅 每条写清日期和出处</div>
-<div>📐 周报的固定格式</div>
-<div>✅ 写完以后的自查清单</div>
+<div class="space-y-1 text-xs">
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">① <b>任务与材料</b>：读哪些材料；上期稿、AI 初稿只当线索，不直接沿用</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">② <b>选题与组织</b>：以本周增量为主，删重复旧闻；分清"宣称"与"实际"</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">③ <b>事实与研判分工</b>：正文只写事实；研判写观察点和改变判断的条件</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">④ <b>原文、数字与出处</b>：每条可核对原文；先对齐口径再比较</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">⑤ <b>中文复核</b>：结论放段首，避免翻译腔</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">⑥ <b>交付格式</b>：固定格式文本，交给 Word 宏排版</div>
+<div class="p-1.5 rounded bg-blue-500 bg-opacity-10">⑦ <b>两遍自检</b>：没有实际验证，不能说"验证通过"</div>
 </div>
 
-<div class="text-sm opacity-75 pt-2">下次只要说"开始写这周的周报"，它就按这套规矩做。</div>
-
 </div>
 
 </div>
 
-<div class="mt-5 p-3 rounded bg-purple-500 bg-opacity-10 text-center text-sm">
+<div class="mt-3 p-3 rounded bg-purple-500 bg-opacity-10 text-center text-sm">
 把一个人脑子里的<b>"怎么做"</b>，变成 AI 也能用的一份文字。
 </div>
 
 <!--
 **Skill**，技能，本质上就是**一份写给 AI 的说明书**：这类事什么时候做、按什么步骤做、要遵守什么规则、常见的坑在哪里。它平时不占地方，遇到相关的任务，AI 才把它翻出来看。
 
-拿我们风险部的周报来说。我们每周要写一份周报，关注主权财政和地缘政治。如果把它写成一个 Skill，里面会有：
+拿我们风险部的地缘形势周报来说，我把它真的写成了一个 Skill。具体内容不展示，我给大家看看它的结构，一共七部分：
 
-- 关注哪些国家、哪些主题；
-- 优先用哪些来源，官方公告和媒体报道怎么区分；
-- 每条要写清日期和出处；
-- 周报的固定格式；
-- 写完以后的自查清单。
+第一，**任务与材料**：读哪些材料，比如上期终稿、本期初稿和来源。还有一条很关键：上期稿和 AI 初稿**只当线索，不直接沿用**，人物、日期、数字每期重查。
 
-【按实际调整：按你们周报的实际要求改】
+第二，**选题与组织**：以这一周的重要增量为主，删掉重复和旧闻；每类议题都要分清"某方宣称"和"实际发生"。
 
-写好以后，下次只要说"开始写这周的周报"，它就会按这套规矩来做。
+第三，**事实与研判分工**：正文只写事实，研判单独成段，要写清观察点，以及什么情况下判断会改变。
+
+第四，**原文、数字与出处**：每条新闻要有可以核对的原文，比较数字之前先对齐口径，脚注紧贴对应的事实。
+
+第五，**中文复核**：文风要求，比如结论放段首、避免翻译腔。
+
+第六，**交付格式**：输出固定格式的文本，交给 Word 宏自动排版。
+
+第七，**两遍自检**：先查内容和逻辑，再查文字和格式；而且明确写着：没有实际运行验证，就不能说"验证通过"。
+
+大家可以看到，这些规矩，原来都在写周报的同事脑子里。写成 Skill 以后，下次只要说"开始写这周的周报"，它就按这套规矩来做。
 
 所以 Skill 做的事情，是**把一个人脑子里的"怎么做"，变成 AI 也能用的一份文字**。这对中后台特别有意义，因为我们很多工作，靠的正是这些没写下来的经验。
 -->
@@ -1767,35 +1767,23 @@ layout: section
 让<b>支持协议的 Agent 和工具服务</b>使用统一接口，减少重复集成。实际连接仍需要适配、身份认证和权限控制。
 </div>
 
-<div>
-
-```mermaid {scale: 0.68}
-flowchart TB
-  subgraph AGT[Agent / Claude / Cursor...]
-  end
-  subgraph MCP[MCP 协议 · 统一接口]
-  end
-  subgraph TOOLS[工具 & 数据源]
-    direction LR
-    T1[文档系统]
-    T2[知识库]
-    T3[工单系统]
-    T4[日历 / 邮件]
-    T5[文件系统]
-  end
-  AGT <--> MCP
-  MCP <--> T1
-  MCP <--> T2
-  MCP <--> T3
-  MCP <--> T4
-  MCP <--> T5
-```
-
+<div class="flex items-center justify-center gap-3 pt-2 text-sm">
+<div class="px-3 py-2 rounded border border-purple-500 border-opacity-50 bg-purple-500 bg-opacity-10">🤖 Agent</div>
+<div class="text-xl opacity-60">⇄</div>
+<div class="px-3 py-2 rounded border-2 border-blue-500 bg-blue-500 bg-opacity-10 font-bold">MCP 统一接口</div>
+<div class="text-xl opacity-60">⇄</div>
+<div class="flex gap-2 p-2 rounded border border-yellow-500 border-opacity-50 bg-yellow-500 bg-opacity-10 text-xs">
+<span class="px-2 py-1 rounded bg-white bg-opacity-60">文档系统</span>
+<span class="px-2 py-1 rounded bg-white bg-opacity-60">知识库</span>
+<span class="px-2 py-1 rounded bg-white bg-opacity-60">数据库</span>
+<span class="px-2 py-1 rounded bg-white bg-opacity-60">日历 / 邮件</span>
+<span class="px-2 py-1 rounded bg-white bg-opacity-60">表格</span>
+</div>
 </div>
 
 </div>
 
-<div class="pt-2 grid grid-cols-2 gap-4 text-sm">
+<div class="pt-4 grid grid-cols-2 gap-4 text-sm">
 
 <div class="p-3 rounded bg-blue-500 bg-opacity-10">
 <b>类比</b>：<span class="term" data-zh="模型上下文协议">MCP</span> 对 AI，就像 <span class="term" data-zh="C 型接口">USB-C</span> 对手机——统一接口，连接兼容设备。
@@ -1807,8 +1795,14 @@ flowchart TB
 
 </div>
 
-<div class="mt-3 p-3 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5 text-sm">
-<b>能看到什么，由接口的设计决定，不由协议决定。</b> 设想：AI 辅助合规检查，不直接连数据库，而是通过一个 MCP 接口，只开放「查某指标某天的数值」「查对应限额」，<b>只读、每次调用有记录</b>。
+<div class="mt-2 p-3 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5 text-xs">
+<div class="text-sm"><b>能看到什么，由接口的设计决定，不由协议决定。</b> 设想：对照投资指引，检查资产状况</div>
+<div class="grid grid-cols-4 gap-2 pt-2 text-center">
+<div class="p-1.5 rounded bg-white bg-opacity-50">① AI 把指引拆成检查项<br/><span class="opacity-70">发行人占比、评级下限、久期区间、币种范围</span></div>
+<div class="p-1.5 rounded bg-white bg-opacity-50">② 经 MCP 取数<br/><span class="opacity-70">只开放持仓汇总比例和指引参数，不给交易明细</span></div>
+<div class="p-1.5 rounded bg-white bg-opacity-50">③ 逐条比对<br/><span class="opacity-70">列出超限、接近限额项，附计算和条款出处</span></div>
+<div class="p-1.5 rounded bg-white bg-opacity-50">④ 人复核确认<br/><span class="opacity-70">接口只读，每次调用留痕</span></div>
+</div>
 </div>
 
 <!--
@@ -1822,12 +1816,17 @@ flowchart TB
 
 MCP 只是一个"插口的标准"，它本身不决定 AI 能看到什么。**能看到什么、能做什么，是做这个接口的人设计出来的。**
 
-举个设想的例子。假如将来要让 AI 辅助做合规检查，我们不会让它直接连上数据库、想查什么查什么。而是做一个 MCP 接口，只开放几样规定好的东西：
+举个设想的例子：**对照投资指引，检查资产状况**。
 
-- 查某个指标在某一天的数值；
-- 查这个指标对应的限额；
-- 只能读，不能改；
-- 每一次调用都有记录。
+投资指引里会写很多限制，比如单一发行人占比不超过多少、信用评级不低于多少、久期在什么区间、可以投哪些币种。
+
+让 AI 来辅助检查，我们不会让它直接连上数据库、想查什么查什么。而是做一个 MCP 接口，只开放三样东西：
+
+- 一个是**查持仓汇总**：按发行人、评级、币种、久期汇总后的比例，不给交易明细；
+- 一个是**查指引参数**：每一条限制的上限、下限；
+- 而且**只能读，不能改**，每一次调用都有记录。
+
+AI 做的事情是：把指引条款拆成一条条检查项，通过这个接口取数，逐条比对，列出超限或者接近限额的地方，附上计算过程和条款出处。最后由人复核确认。
 
 这样，AI 能做的事，就被限定在我们允许的范围里。它能帮忙比对、提示，但碰不到它不该碰的东西。
 
@@ -1851,7 +1850,7 @@ MCP 只是一个"插口的标准"，它本身不决定 AI 能看到什么。**�
 <div class="pt-2 text-sm opacity-80">
 
 任务较大、子任务可以分开时，可以让多个 Agent 分工。<br/>
-现代范式：<b>一个主 <span class="term" data-zh="智能体">Agent</span>，调用多个专精的 <span class="term" data-zh="子智能体">Subagent</span></b>——就像主管分派任务给专员。
+现代范式：<b>一个主 <span class="term" data-zh="智能体">Agent</span>，调用多个专精的 <span class="term" data-zh="子智能体">Subagent</span></b>——就像主管分派任务给组员。
 
 </div>
 
@@ -1892,7 +1891,7 @@ flowchart TB
 | **<span class="term" data-zh="提示词">Prompt</span>** | 单次任务的说明 | 一张便签 | 告诉一次 |
 | **<span class="term" data-zh="技能">Skill</span>** | 可复用的"办法" | 一本操作手册 | 教会一次 |
 | **<span class="term" data-zh="模型上下文协议">MCP</span>** | 通往外部系统的接口 | 一个插口 | 接通一次 |
-| **<span class="term" data-zh="子智能体">Subagent</span>** | 分派出去的子任务 | 主管派给专员 | 拆开做 |
+| **<span class="term" data-zh="子智能体">Subagent</span>** | 分派出去的子任务 | 主管派给组员 | 拆开做 |
 
 </div>
 
@@ -1906,7 +1905,7 @@ flowchart TB
 - **Prompt** 是一张便签：告诉一次，只管这一次；
 - **Skill** 是一本操作手册：教会一次，以后都会；
 - **MCP** 是一个插口：接通一次，以后都通；
-- **Subagent** 是分出去的专员：大任务拆开做。
+- **Subagent** 是分出去的组员：大任务拆开做。
 
 大家不用记定义，记住这几个比喻就够了。那把这些全部装在一起的，是什么？
 -->
@@ -1971,41 +1970,47 @@ Harness 这个词，原意是马具、挽具，就是套在马身上、让马的
 
 # 为什么 <span class="term" data-zh="骨架">Harness</span> 比模型更重要？
 
-<div class="grid grid-cols-2 gap-8 pt-4">
+<div class="grid grid-cols-2 gap-6 pt-3 text-sm">
 
 <div>
 
 ### 现实观察
 
 - 同一个模型，拿到的材料、工具和反馈不同，结果也可能很不同
-- 模型负责理解与生成，系统负责连接工具、控制流程和验证结果
-- 模型升级后，仍要用自己的任务重新评估；工作材料和验收方法可以继续积累
+- 模型负责理解与生成，系统负责连接工具、控制流程、检查结果
+- 模型换代很快；值得积累的是<b>我们自己的材料、做法和检查方法</b>
 
 </div>
 
-<div>
+<div class="p-4 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5">
 
-### <span class="term" data-zh="骨架">Harness</span> 里真正难的事
+<div class="font-bold text-base">对资管公司：敏感信息隔离，也是 Harness</div>
 
-- 上下文怎么精简不丢信息
-- 工具怎么抽象、命名、报错处理
-- 错误该重试还是该升级
-- 子任务怎么派发、结果怎么合并
-- 人什么时候该介入
-- 如何度量"它到底做得好不好"
+<div class="pt-2 space-y-1">
+<div>· 哪些数据能进入模型，由系统决定，不由模型决定</div>
+<div>· 敏感部分只在内部环境、内部部署的模型里处理</div>
+<div>· 交给外部模型的，只有公开或脱敏、汇总后的信息</div>
+<div>· 接口只开放必要字段，每次调用留痕</div>
+</div>
 
-<div class="text-sm opacity-70 pt-3">
-这些都<b>不是写个 <span class="term" data-zh="提示词">prompt</span> 能解决的</b>，是工程问题。
+<div class="pt-2 text-xs opacity-70">具体做法以公司规定为准。</div>
+
 </div>
 
 </div>
 
-</div>
+<div class="pt-5 text-center text-base">能不能<b>安全地</b>用好大模型，很大程度上取决于 Harness 搭得好不好。</div>
 
 <!--
 大家可能有过这种体验：同一个模型，在这个产品里好用，在那个产品里就差很多。原因往往不在模型，而在外面这一套。
 
 拿到的材料不同、能用的工具不同、出错以后有没有人检查，结果就会差很多。所以模型换代很快，但真正值得积累的，是**我们自己的材料、做法和检查方法**。这些不会因为换了模型就过时。
+
+对资产管理公司来说，Harness 还有一层特别重要的意义：**敏感信息怎么隔离，也是 Harness 的一部分。**
+
+模型本身不知道什么能看、什么不能看。决定这件事的，是外面这套系统：哪些数据能进入模型；敏感的部分是不是只在内部环境、内部部署的模型里处理；交给外部模型的，是不是只有公开或者脱敏、汇总以后的信息；接口只开放必要的字段；每一次调用都留下记录。
+
+刚才 MCP 那个合规检查的设想，就是一个例子：AI 只拿得到汇总比例，拿不到交易明细。所以，**能不能安全地用好大模型，很大程度上取决于 Harness 搭得好不好。** 当然，具体怎么做，要按公司的规定来。
 -->
 
 ---
@@ -2166,7 +2171,7 @@ layout: section
 <div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>🗂 行政</b><br/><span class="opacity-80">会议通知、活动安排</span></div>
 <div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>👥 人力</b><br/><span class="opacity-80">培训材料初稿、常见问题整理</span></div>
 <div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>💰 财务</b><br/><span class="opacity-80">报销材料是否齐全的检查、费用说明的起草</span></div>
-<div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>✍️ 每个人</b><br/><span class="opacity-80">邮件、纪要、周报、汇报材料的初稿</span></div>
+<div class="p-3 rounded bg-gray-500 bg-opacity-10"><b>✍️ 每个人</b><br/><span class="opacity-80">邮件、纪要、周报、汇报材料的初稿，如外部研讨会纪要</span></div>
 </div>
 
 <div class="pt-5 text-center text-sm opacity-80">
@@ -2187,7 +2192,7 @@ layout: section
 - 行政：会议通知、活动安排；
 - 人力：培训材料初稿、常见问题整理；
 - 财务：报销材料是否齐全的检查、费用说明的起草；
-- 每个人：邮件、纪要、周报、汇报材料的初稿。
+- 每个人：邮件、纪要、周报、汇报材料的初稿，比如把一场外部研讨会整理成纪要。
 
 反过来，**很少做、需要很强判断、错了代价很大的事**，先不要交给它。
 -->
@@ -2207,12 +2212,12 @@ layout: section
 </div>
 
 <div class="p-4 rounded bg-blue-500 bg-opacity-10 text-sm leading-relaxed">
-<div class="text-xs opacity-60 pb-2">例：整理例会纪要</div>
-🎯 请整理本周例会的纪要。<br/>
-📎 材料是会议录音转写稿和上周的待办清单。<br/>
-📐 按"结论、待办、负责人、截止时间"输出表格。<br/>
-🚧 没提到负责人的待办留空，不要自己补；讨论中的意见不要写成结论。<br/>
-✅ 最后列出你不确定、没找到的地方。
+<div class="text-xs opacity-60 pb-2">例：整理外部研讨会纪要</div>
+🎯 请整理 X 月 X 日外部研讨会的纪要。<br/>
+📎 材料：录音转写稿、会议议程、嘉宾演示稿。<br/>
+📐 按"议题、主要观点（注明发言人）、提到的数据与出处、对我们的启示"输出，"启示"标明是我方理解。<br/>
+🚧 只记录会上内容，不补充外部信息；听不清的发言人和数字标"待核实"；不把嘉宾观点写成定论。<br/>
+✅ 最后列出听不清、不确定的地方。
 </div>
 
 </div>
@@ -2229,6 +2234,10 @@ layout: section
 - **格式**：交回什么样子；
 - **约束**：不要做什么；
 - **验收**：怎样才算做完。比如"最后列出你没找到、不确定的地方"。
+
+举个例子，整理一场外部研讨会的纪要：
+
+目标是整理某月某日外部研讨会的纪要；材料是录音转写稿、会议议程和嘉宾的演示稿；格式是按"议题、主要观点和发言人、提到的数据和出处、对我们的启示"来写，其中"启示"要标明是我们自己的理解；约束是只记录会上的内容，不补充外部信息，听不清的发言人和数字标"待核实"，不要把嘉宾的观点写成定论；验收是最后列出听不清、不确定的地方。
 
 最后这一条特别好用。让它主动告诉你它哪里没把握，比你自己去找它哪里错了，要省力得多。
 -->
@@ -2406,6 +2415,7 @@ layout: end
 
 - 原讲义：川叶，[intro-agentic-ai](https://github.com/riverscn/intro-agentic-ai)，保留基础讲解与交互图
 - [Karpathy 的 LLM Wiki 思路](https://venturebeat.com/data/karpathy-shares-llm-knowledge-base-architecture-that-bypasses-rag-with-an)（2026-04，VentureBeat 介绍）
+- [Introducing Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval)（Anthropic，2024-09）
 - [上下文工程](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)（Anthropic，2025-09-29）
 - [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)（2025-10-16，12-18 更新开放规范）
 - [长任务 Harness](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)（2025-11-26）
