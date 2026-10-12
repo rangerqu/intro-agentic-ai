@@ -1783,26 +1783,21 @@ layout: section
 
 </div>
 
-<div class="pt-4 grid grid-cols-2 gap-4 text-sm">
-
-<div class="p-3 rounded bg-blue-500 bg-opacity-10">
-<b>类比</b>：<span class="term" data-zh="模型上下文协议">MCP</span> 对 AI，就像 <span class="term" data-zh="C 型接口">USB-C</span> 对手机——统一接口，连接兼容设备。
+<div class="pt-3 text-sm text-center">
+<b>类比</b>：像手机的 <span class="term" data-zh="C 型接口">USB-C</span>，统一接口，插上就能用。<b>但接得上，不等于应该接</b>：能接什么、能读还是能写，要另外决定。
 </div>
 
-<div class="p-3 rounded bg-green-500 bg-opacity-10">
-<b>接得上，不等于应该接</b>：能接哪些系统、能读还是能写，要另外决定。
+<div class="mt-3 p-3 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5 text-xs">
+<div class="text-sm pb-1"><b>设想：AI 辅助合规检查</b>，两个 Agent，各开各的接口</div>
+<div class="grid gap-x-3" style="grid-template-columns: 5.5rem 1fr 1fr;">
+<div></div><div class="font-bold text-sm">📊 资产状况检查 Agent</div><div class="font-bold text-sm">🔁 交易流程检查 Agent</div>
+<div class="py-1 border-t border-gray-400 border-opacity-30"><b>检查什么</b></div><div class="py-1 border-t border-gray-400 border-opacity-30">持仓是否符合投资指引：发行人占比、评级下限、久期区间、币种范围</div><div class="py-1 border-t border-gray-400 border-opacity-30">每笔交易是否先审批再下单、是否在授权范围内、对手方是否在名单内</div>
+<div class="py-1 border-t border-gray-400 border-opacity-30"><b>MCP 只开放</b></div><div class="py-1 border-t border-gray-400 border-opacity-30"><b>持仓汇总比例 + 指引参数</b></div><div class="py-1 border-t border-gray-400 border-opacity-30"><b>交易明细 + 审批记录</b></div>
+<div class="py-1 border-t border-gray-400 border-opacity-30"><b>看不到</b></div><div class="py-1 border-t border-gray-400 border-opacity-30">交易明细</div><div class="py-1 border-t border-gray-400 border-opacity-30">持仓全貌、指引以外的信息</div>
+<div class="py-1 border-t border-gray-400 border-opacity-30"><b>共同点</b></div><div class="py-1 border-t border-gray-400 border-opacity-30" style="grid-column: span 2;">只读 · 每次调用留痕 · 结果由人复核</div>
 </div>
 
-</div>
-
-<div class="mt-2 p-3 rounded border border-orange-500 border-opacity-50 bg-orange-500 bg-opacity-5 text-xs">
-<div class="text-sm"><b>能看到什么，由接口的设计决定，不由协议决定。</b> 设想：对照投资指引，检查资产状况</div>
-<div class="grid grid-cols-4 gap-2 pt-2 text-center">
-<div class="p-1.5 rounded bg-white bg-opacity-50">① AI 把指引拆成检查项<br/><span class="opacity-70">发行人占比、评级下限、久期区间、币种范围</span></div>
-<div class="p-1.5 rounded bg-white bg-opacity-50">② 经 MCP 取数<br/><span class="opacity-70">只开放持仓汇总比例和指引参数，不给交易明细</span></div>
-<div class="p-1.5 rounded bg-white bg-opacity-50">③ 逐条比对<br/><span class="opacity-70">列出超限、接近限额项，附计算和条款出处</span></div>
-<div class="p-1.5 rounded bg-white bg-opacity-50">④ 人复核确认<br/><span class="opacity-70">接口只读，每次调用留痕</span></div>
-</div>
+<div class="text-sm text-center pt-1"><b>同一个协议，接口开放什么，决定了 Agent 能看到什么。</b></div>
 </div>
 
 <!--
@@ -1816,19 +1811,17 @@ layout: section
 
 MCP 只是一个"插口的标准"，它本身不决定 AI 能看到什么。**能看到什么、能做什么，是做这个接口的人设计出来的。**
 
-举个设想的例子：**对照投资指引，检查资产状况**。
+举个设想的例子：**让 AI 辅助合规检查**。我们可以做两个 Agent，各管一件事，各开各的接口。
 
-投资指引里会写很多限制，比如单一发行人占比不超过多少、信用评级不低于多少、久期在什么区间、可以投哪些币种。
+第一个是**资产状况检查 Agent**。它检查持仓是否符合投资指引，比如单一发行人占比、信用评级下限、久期区间、币种范围。所以它的 MCP 接口只开放两样：**持仓的汇总比例**，和**指引里的参数**。交易明细，它看不到。
 
-让 AI 来辅助检查，我们不会让它直接连上数据库、想查什么查什么。而是做一个 MCP 接口，只开放三样东西：
+第二个是**交易流程检查 Agent**。它检查每一笔交易是不是先审批再下单、是不是在授权范围内、对手方是不是在名单内。所以它的接口只开放**交易明细和审批记录**。持仓全貌、指引以外的信息，它看不到。
 
-- 一个是**查持仓汇总**：按发行人、评级、币种、久期汇总后的比例，不给交易明细；
-- 一个是**查指引参数**：每一条限制的上限、下限；
-- 而且**只能读，不能改**，每一次调用都有记录。
+两个 Agent 有几个共同点：**只能读，不能改；每一次调用都留痕；结果由人复核。**
 
-AI 做的事情是：把指引条款拆成一条条检查项，通过这个接口取数，逐条比对，列出超限或者接近限额的地方，附上计算过程和条款出处。最后由人复核确认。
+大家看，同样是 MCP，同样是合规检查，两个 Agent 能看到的东西完全不同。这就是我想说的：**同一个协议，接口开放什么，决定了 Agent 能看到什么。** 每个 Agent 只拿到完成自己任务所需要的数据，多一样都不给。
 
-这样，AI 能做的事，就被限定在我们允许的范围里。它能帮忙比对、提示，但碰不到它不该碰的东西。
+顺带一提，交易明细比汇总比例敏感得多，这类数据只适合在内部环境里处理。这一点后面讲 Harness 的时候还会再说。
 
 讲到这里，我给大家看一个我自己做的小工具，它正好把 Skill 和 MCP 都用上了。
 
@@ -2010,7 +2003,7 @@ Harness 这个词，原意是马具、挽具，就是套在马身上、让马的
 
 模型本身不知道什么能看、什么不能看。决定这件事的，是外面这套系统：哪些数据能进入模型；敏感的部分是不是只在内部环境、内部部署的模型里处理；交给外部模型的，是不是只有公开或者脱敏、汇总以后的信息；接口只开放必要的字段；每一次调用都留下记录。
 
-刚才 MCP 那个合规检查的设想，就是一个例子：AI 只拿得到汇总比例，拿不到交易明细。所以，**能不能安全地用好大模型，很大程度上取决于 Harness 搭得好不好。** 当然，具体怎么做，要按公司的规定来。
+刚才 MCP 那两个合规检查 Agent 就是例子：资产状况检查只拿得到汇总比例，交易流程检查只拿得到交易明细和审批记录，而且交易明细这类敏感数据只在内部环境处理。所以，**能不能安全地用好大模型，很大程度上取决于 Harness 搭得好不好。** 当然，具体怎么做，要按公司的规定来。
 -->
 
 ---
