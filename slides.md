@@ -2418,4 +2418,4 @@ layout: end
 
 </div>
 
-<div class="pt-5 text-xs opacity-60">检索截至 2026-09-23。完整修订说明见仓库 docs/2026-revision-notes.md。公司应用与流程均为讨论示例。</div>
+<div class="pt-5 text-xs opacity-60">检索截至 2026-10。公司应用与流程均为讨论示例。</div>
