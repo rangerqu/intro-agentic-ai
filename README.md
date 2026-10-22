@@ -2,9 +2,11 @@
 
 内部分享演示文档，主题为「Agentic AI 入门与业务落地」。
 
-[在线演示](https://intro-agentic-ai.lishun.me)
+本仓库为 2026 年内部分享修订版。查看当前内容：[幻灯片源码](slides.md) · [演讲逐字稿](docs/talk-script.md)。修订版网页请按下方步骤构建部署。
 
-[演讲录像](https://www.bilibili.com/video/BV1v6o5BrEiT/)
+[原作者在线演示（非本仓库修订版）](https://intro-agentic-ai.lishun.me)
+
+[原作者演讲录像](https://www.bilibili.com/video/BV1v6o5BrEiT/)
 
 ## 运行
 
